@@ -11,44 +11,24 @@
       "completed": false
     },
     {
-      "id": "3",
-      "title": "Listen to Eric talk about how much he loves Fortnite",
-      "completed": false
-    },
-    {
-      "id": "4",
-      "title": "Convince Eric there's more to life than Fortnite",
-      "completed": false
-    },
-    {
-      "id": "5",
-      "title": "Convince Eric that there are better games to play",
-      "completed": false
-    },
-    {
-      "id": "6",
-      "title": "Educate Eric that Overwatch is better than Fortnite",
-      "completed": false
-    },
-    {
-      "id": "7",
-      "title": "Lecture",
-      "completed": false
-    },
-    {
       "id": "8",
       "title": "Code",
       "completed": true
     },
     {
-      "id": "9",
-      "title": "NOT watch Eric play Fortnite",
-      "completed": true
+      "title": "newTodo",
+      "completed": true,
+      "id": "6DkOh8M"
     },
     {
-      "id": "10",
-      "title": "Ignore Eric's request to play Fortnite with him",
-      "completed": true
+      "title": "another todo",
+      "completed": false,
+      "id": "pzQK4_T"
+    },
+    {
+      "title": "Code More",
+      "completed": false,
+      "id": "mnFj4m6"
     }
   ]
 }

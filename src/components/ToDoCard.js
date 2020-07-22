@@ -1,18 +1,38 @@
 import React from 'react'
 
 const ToDoCard = (props) => {
-    return (
+
+  const buttonClass = props.completed ? "ui button orange" : "ui button blue"
+
+  const updateToDo = () => {
+    fetch(`http://localhost:3000/todos/${props.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        completed: !props.completed
+      })
+    })
+    .then(res => res.json())
+    .then(updatedToDo => props.toggleComplete(updatedToDo))
+  }
+
+  const deleteFromServer = () => {
+    fetch(`http://localhost:3000/todos/${props.id}`, {
+      method: "DELETE"
+    })
+    .then(props.deleteToDo(props.id))
+  }
+
+  return (
     <div className="ui card">
-        <div className="content">
-          <div className="header">{/*ToDo TITLE*/}</div>
-          {/* The button will require some conditional rendering. 
-            If the button is under the Incomplete Container, button should be blue and text should say Complete
-            If the button is under Complete Container, button should be orange and text should say Incomplete 
-            */}
-          <button onClick={null} className="ui button blue">Change</button>
-          <button onClick={null} className="ui button red">Delete</button>
-        </div>
-        
+      <div className="content">
+        <div className="header">{props.title}</div>
+        <button onClick={updateToDo} className={buttonClass}>{props.completed ? "Incomplete" : "Complete"}</button>
+        <button onClick={deleteFromServer} className="ui button red">Delete</button>
+      </div>  
     </div>
     )
 }
